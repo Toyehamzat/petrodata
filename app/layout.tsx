@@ -37,7 +37,7 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           <SidebarProvider defaultOpen={defaultOpen}>
             <AppSidebar />
-            <main className="px-[10px] md:px-[72px] py-6 md:py-12 w-full max-w-[1300px] m-auto flex min-h-screen h-full">
+            <main className="px-[10px] md:px-[72px] py-6 md:py-12 w-full max-w-[1440px] m-auto flex min-h-screen h-full">
               <div className="flex flex-col gap-2 w-full h-full">
                 <Header />
                 {children}
