@@ -75,9 +75,18 @@ export function AppSidebar() {
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
-                <SidebarMenuItem key={item.title} className={!open ? "h-[48px] hover:text-[#009688] hover:bg-sidebar-accent rounded-l-3xl rounded-r-none flex justify-center items-center pr-2" : ""}>
+                <SidebarMenuItem
+                  key={item.title}
+                  className={
+                    !open
+                      ? "h-[48px] hover:text-[#009688] hover:border-r-2 border-[#009688] hover:bg-sidebar-accent rounded-l-3xl rounded-r-none flex justify-center items-center pr-2"
+                      : "hover:border-r-2 border-[#009688]"
+                  }
+                >
                   <SidebarMenuButton
-                    className={`rounded-l-3xl rounded-r-none h-[48px] font-medium hover:text-[#009688] ${!open ? 'hover:bg-transparent' : ''}`}
+                    className={`rounded-l-3xl rounded-r-none h-[48px] font-medium hover:text-[#009688]  ${
+                      !open ? "hover:bg-transparent" : ""
+                    }`}
                     asChild
                   >
                     <a href={item.url}>
