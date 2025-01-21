@@ -16,7 +16,7 @@ export function ModeToggle() {
     <button
       onClick={toggleTheme}
       className={`relative h-[37px] w-[72px] rounded-full p-1 ${
-        isDarkMode ? "bg-[#80CBC4]" : "bg-teal-500"
+        isDarkMode ? "bg-[#00695C]" : "bg-teal-500"
       } transition-colors duration-500`}
     >
       <div className="flex w-full justify-between px-2">
