@@ -250,7 +250,7 @@ const Sidebar = React.forwardRef<
             data-sidebar="sidebar"
             className="relative flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
           >
-            <div className="absolute -right-4 top-14 ">
+            <div className="absolute z-50 -right-4 top-14 ">
               <SidebarTrigger />
             </div>
             {children}
