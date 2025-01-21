@@ -61,8 +61,9 @@ export function AppSidebar() {
   const { open } = useSidebar();
   const pathname = usePathname();
 
+
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon" >
       <div className="flex justify-center items-center">
         <a href="#" className="flex items-center gap-2 px-4 py-3">
           <Image src={logo} alt="Petrodara Logo" className="h-6 w-6" />
@@ -90,9 +91,9 @@ export function AppSidebar() {
                     }
                   >
                     <SidebarMenuButton
-                      className={`rounded-l-3xl rounded-r-none h-[48px] font-medium hover:text-[#009688] ${
-                        !open ? "hover:bg-transparent" : ""
-                      } ${isActive ? "bg-sidebar-accent text-[#009688]" : ""}`}
+                      className={`rounded-l-3xl rounded-r-none h-[48px] font-medium hover:text-[#009688] data-[active=true]:text-[#009688] ${
+                        !open ? "hover:bg-transparent data-[active=true]:border-none data-[active=true]:bg-transparent " : ""
+                      } ${isActive ? "bg-sidebar-accent" : ""}`}
                       asChild
                       isActive={isActive}
                     >
