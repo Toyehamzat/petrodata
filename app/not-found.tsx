@@ -1,36 +1,53 @@
-"use client"
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { LucideAlertTriangle } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { ChartNoAxesColumn } from "lucide-react";
 
 export default function NotFound() {
-  const pathname = usePathname();
-
-  // Determine the redirect path
-  const redirectPath = pathname === "/dashboard" ? "/analysis" : "/";
+  const redirectPath = "/analysis";
 
   return (
-    <div className="flex flex-col items-center justify-center h-[80vh]">
-      <div className="flex items-center space-x-4">
-        <LucideAlertTriangle className="w-12 h-12 text-red-600" />
-        <div>
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-white">
-            404
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
-            Page not found
+    <div className="min-h-[80vh] flex items-center justify-center px-6 py-12">
+      <div className="text-center">
+        <h1 className="text-9xl font-extrabold text-gray-800 dark:text-gray-100 tracking-widest">
+          404
+        </h1>
+        <div className="mt-4 space-y-2">
+          <h2 className="text-2xl font-semibold text-gray-700 dark:text-gray-200">
+            Oops! Page not found
+          </h2>
+          <p className="text-gray-500 dark:text-gray-400 max-w-lg mx-auto">
+            We couldn&lsquo;t find what you&lsquo;re looking for. The page might
+            have been moved, deleted, or possibly never existed.
           </p>
         </div>
+        <div className="mt-8 mb-8 border-t border-gray-200 dark:border-gray-700 max-w-xs mx-auto" />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link href={redirectPath}>
+            <Button className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium">
+              <ChartNoAxesColumn className="mr-2 h-4 w-4" />
+              Back to Analysis
+            </Button>
+          </Link>
+        </div>
+        <div className="mt-8 text-sm text-gray-500 dark:text-gray-400">
+          <p>Looking for something specific?</p>
+          <div className="mt-2 space-x-4">
+            <Link href="/#" className="text-blue-600 hover:underline">
+              Help Center
+            </Link>
+            <span>•</span>
+            <Link href="/#" className="text-blue-600 hover:underline">
+              Contact Support
+            </Link>
+            <span>•</span>
+            <Link href="/#" className="text-blue-600 hover:underline">
+              Sitemap
+            </Link>
+          </div>
+        </div>
       </div>
-      <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-        Sorry, the page you are looking for does not exist or has been moved.
-      </p>
-      <Link href={redirectPath}>
-        <Button className="mt-6 bg-blue-600 text-white hover:bg-blue-700">
-          {pathname === "/dashboard" ? "Go to Analysis" : "Go back home"}
-        </Button>
-      </Link>
     </div>
   );
-};
+}

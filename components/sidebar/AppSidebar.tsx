@@ -98,7 +98,7 @@ export function AppSidebar() {
                       isActive={isActive}
                     >
                       <a href={item.url}>
-                        <item.icon size={24} />
+                        <item.icon className="w-6 h-6" />
                         {open && (
                           <span className="text-base">{item.title}</span>
                         )}
