@@ -1,4 +1,5 @@
 "use client";
+
 import {
   BookOpen,
   LayoutDashboard,
@@ -8,6 +9,7 @@ import {
   Settings,
 } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import logo from "@/app/icon.svg";
 import { useSidebar } from "@/components/ui/sidebar";
 
@@ -25,38 +27,40 @@ import {
 const items = [
   {
     title: "Dashboard",
-    url: "#",
+    url: "/dashboard",
     icon: LayoutDashboard,
   },
   {
     title: "Analysis",
-    url: "#",
+    url: "/analysis",
     icon: ChartNoAxesColumn,
   },
   {
     title: "News and Report",
-    url: "#",
+    url: "/news",
     icon: BookOpen,
   },
   {
     title: "Exclusive report",
-    url: "#",
+    url: "/exclusive-report",
     icon: Sparkle,
   },
   {
     title: "Watchlist",
-    url: "#",
+    url: "/watchlist",
     icon: BookmarkMinus,
   },
   {
     title: "Settings",
-    url: "#",
+    url: "/settings",
     icon: Settings,
   },
 ];
 
 export function AppSidebar() {
   const { open } = useSidebar();
+  const pathname = usePathname();
+
   return (
     <Sidebar collapsible="icon">
       <div className="flex justify-center items-center">
@@ -74,28 +78,34 @@ export function AppSidebar() {
         <SidebarGroup className="h-[90%] flex flex-col justify-center">
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem
-                  key={item.title}
-                  className={
-                    !open
-                      ? "h-[48px] hover:text-[#009688] hover:border-r-2 border-[#009688] hover:bg-sidebar-accent rounded-l-3xl rounded-r-none flex justify-center items-center pr-2"
-                      : "hover:border-r-2 border-[#009688]"
-                  }
-                >
-                  <SidebarMenuButton
-                    className={`rounded-l-3xl rounded-r-none h-[48px] font-medium hover:text-[#009688]  ${
-                      !open ? "hover:bg-transparent" : ""
-                    }`}
-                    asChild
+              {items.map((item) => {
+                const isActive = pathname === item.url;
+                return (
+                  <SidebarMenuItem
+                    key={item.title}
+                    className={
+                      !open
+                        ? "h-[48px] hover:text-[#009688] hover:border-r-2 border-[#009688] hover:bg-sidebar-accent rounded-l-3xl rounded-r-none flex justify-center items-center pr-2"
+                        : "hover:border-r-2 border-[#009688]"
+                    }
                   >
-                    <a href={item.url}>
-                      <item.icon size={24} />
-                      {open && <span className="text-base">{item.title}</span>}
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
+                    <SidebarMenuButton
+                      className={`rounded-l-3xl rounded-r-none h-[48px] font-medium hover:text-[#009688] ${
+                        !open ? "hover:bg-transparent" : ""
+                      } ${isActive ? "bg-sidebar-accent text-[#009688]" : ""}`}
+                      asChild
+                      isActive={isActive}
+                    >
+                      <a href={item.url}>
+                        <item.icon size={24} />
+                        {open && (
+                          <span className="text-base">{item.title}</span>
+                        )}
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
