@@ -154,7 +154,7 @@ const RetailPriceChart = () => {
         <div className="flex justify-end px-6 py-2">
           <span
             onClick={() => setIsModalOpen(true)}
-            className="text-[#00897B] text-sm font-medium cursor-pointer hover:text-green-300"
+            className="text-[#00897B] text-xs sm:text-sm font-medium cursor-pointer hover:text-green-300"
           >
             View detailed summary
           </span>
