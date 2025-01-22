@@ -4,6 +4,7 @@ import ProductPrices from "./ProductPrices";
 import WeeklyReport from "./WeeklyReport";
 import { LucideSearch } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import RetailPriceChart from "./RetailPriceChart";
 export default function RetailTabContent() {
   return (
     <div className="w-full flex flex-col gap-8 mt-32 sm:mt-20 md:mt-0 ">
@@ -12,12 +13,12 @@ export default function RetailTabContent() {
           <ProductPrices />
         </div>
         <div className="w-full">
-          <ProductPrices />
+          <RetailPriceChart/>
         </div>
       </div>
 
       <div className="w-full flex flex-col gap-8 border-t-[1px] py-6 border-[#464646]">
-        <div className="relative w-80 h-11">
+        <div className="relative w-full sm:w-80 h-11">
           <LucideSearch className="absolute left-3 top-[22px] transform -translate-y-1/2 h-5 w-5 text-[#A3A3A3]" />
           <Input
             type="text"
