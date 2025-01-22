@@ -104,7 +104,7 @@ const RetailPriceChart = () => {
   const currentData = chartData[selectedProduct][timeFrame];
   const timeFrames: TimeFrame[] = ["1D", "1W", "1M", "3M", "6M", "YTD", "All"];
   return (
-    <Card className="bg-[#171717] border-zinc-800 rounded-[8px] w-full">
+    <Card className="bg-[#171717] border-zinc-800 rounded-[8px] w-full h-[320px]">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4 pt-0">
         <div className="flex items-center gap-1 sm:gap-2 pt-6">
           <h3 className="text-xs sm:text-sm text-[#FAFAFA] font-normal">
