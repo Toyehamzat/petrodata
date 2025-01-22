@@ -120,7 +120,7 @@ const RetailPriceChart = () => {
               className={`px-1 pt-6 text-xs transition-color s ${
                 selectedProduct === product
                   ? "text-[#009688] border-t-2 border-[#009688]"
-                  : "text-[#A3A3A3] hover:text-[#009688] border-t-2 border-[#009688]"
+                  : "text-[#A3A3A3] hover:text-[#009688] hover:border-t-2 border-[#009688]"
               }`}
             >
               {product}
@@ -169,7 +169,7 @@ const RetailPriceChart = () => {
                 className={`px-1 py-4 sm:py-2.5 text-xs transition-colors ${
                   timeFrame === frame
                     ? "text-[#009688] border-t-2 border-[#009688]"
-                    : "text-[#A3A3A3] hover:text-[#009688] border-t-2 border-[#009688]"
+                    : "text-[#A3A3A3] hover:text-[#009688] hover:border-t-2 border-[#009688]"
                 }`}
               >
                 {frame}
