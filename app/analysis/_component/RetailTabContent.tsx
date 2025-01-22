@@ -22,7 +22,7 @@ export default function RetailTabContent() {
           <Input
             type="text"
             placeholder="Search..."
-            className="bg-[#525252] border-none text-[#A3A3A3] pl-9 pr-4 rounded-2xl h-full w-full"
+            className="bg-[#525252] border-none text-[#A3A3A3] pl-9 pr-4 rounded-3xl h-full w-full"
           />
         </div>
         <div>

@@ -75,7 +75,7 @@ export default function Page() {
             <TabsTrigger
               key={tab.value}
               value={tab.value}
-              className="text-base font-medium hover:text-[#009688] data-[state=active]:outline-none data-[state=active]:text-[#009688] data-[state=active]:border-t-2 border-[#009688] px-2 pb-2"
+              className="text-base font-medium hover:text-[#009688] data-[state=active]:outline-none data-[state=active]:text-[#009688] hover:border-t-2 data-[state=active]:border-t-2 border-[#009688] px-2 pb-2"
             >
               <tab.icon className="mr-2 h-4 w-4" /> {tab.label}
             </TabsTrigger>
