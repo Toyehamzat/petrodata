@@ -58,13 +58,10 @@ const SharedTabContent = ({
   title: string;
   description: string;
 }) => (
-  <div className="grid gap-4">
+  <div className="grid gap-4 mt-32 sm:mt-20 md:mt-0 ">
     <div className="space-y-4">
       <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
       <p className="text-muted-foreground">{description}</p>
-    </div>
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {/* Shared analysis components would go here */}
     </div>
   </div>
 );
@@ -73,7 +70,7 @@ export default function Page() {
   return (
     <div className="w-full h-full">
       <Tabs defaultValue="retail-price-analysis" className="space-y-6">
-        <TabsList className="flex justify-start space-x-4 border-t-[0.8px] border-[#464646] bg-transparent rounded-none">
+        <TabsList className="flex flex-wrap justify-start gap-2 border-t-[0.8px] border-[#464646] bg-transparent rounded-none">
           {TABS.map((tab) => (
             <TabsTrigger
               key={tab.value}

@@ -78,7 +78,7 @@ const WeeklyReport: React.FC<WeeklyReportProps> = ({
     <Card className="bg-transparent border-none p-0">
       <CardContent className="border-none p-0">
         <div className="mb-4">
-          <h2 className="text-base font-semibold text-[#A3A3A3">
+          <h2 className="text-base font-semibold text-[#A3A3A3]">
             Report - Week {weekNumber}, {year}
           </h2>
         </div>

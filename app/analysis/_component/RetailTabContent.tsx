@@ -6,7 +6,7 @@ import { LucideSearch } from "lucide-react";
 import { Input } from "@/components/ui/input";
 export default function RetailTabContent() {
   return (
-    <div className="w-full flex flex-col gap-8">
+    <div className="w-full flex flex-col gap-8 mt-32 sm:mt-20 md:mt-0 ">
       <div className={`grid gap-4 grid-cols-1 md:grid-cols-[2fr_3fr]`}>
         <div className="w-full">
           <ProductPrices />
