@@ -47,7 +47,7 @@ const PRODUCT_DATA = [
 
 export default function ProductPrices() {
   return (
-    <Card className="bg-[#171717] border-zinc-800 rounded-[8px]">
+    <Card className="bg-[#171717] border-zinc-800 rounded-[8px] h-[320px]">
       <CardHeader className="pb-3">
         <CardTitle className="text-sm font-medium text-zinc-200">
           Current product retail prices
