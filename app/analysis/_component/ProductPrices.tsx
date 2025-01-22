@@ -1,3 +1,4 @@
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 
@@ -71,20 +72,21 @@ export default function ProductPrices() {
                 <div className={`flex items-center space-x-1 text-xs`}>
                   <span
                     className={` ${
-                      product.trend === "up"
-                        ? "text-green-500 "
-                        : "text-red-500"
+                      product.trend === "up" ? "text-[#12B76A]" : "text-[#F04438]"
                     }`}
                   >
                     {product.change}
                   </span>
-                  <span
-                    className={` rounded-xl p-1 ${
-                      product.trend === "up" ? "bg-green-500 " : "bg-red-500"
+                  <Badge
+                    variant="default"
+                    className={`${
+                      product.trend === "up"
+                        ? "bg-[#054F31] text-[#32D583]"
+                        : "bg-[#F04438] text-[#FDA29B]"
                     }`}
                   >
-                    ({product.percentChange}%)
-                  </span>
+                    {product.percentChange}
+                  </Badge>
                 </div>
               </div>
             </div>
