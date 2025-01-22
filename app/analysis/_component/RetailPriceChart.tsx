@@ -117,7 +117,7 @@ const RetailPriceChart = () => {
             <button
               key={product}
               onClick={() => setSelectedProduct(product as ProductType)}
-              className={`px-2 pt-6 text-xs transition-color s ${
+              className={`px-1 pt-6 text-xs transition-color s ${
                 selectedProduct === product
                   ? "text-[#009688] border-t-2 border-[#009688]"
                   : "text-[#A3A3A3] hover:text-gray-300"
@@ -161,12 +161,12 @@ const RetailPriceChart = () => {
           <SummaryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
         <div className="flex justify-between items-center px-4 border-t border-[#464646]">
-          <div className="flex gap-1 sm:gap-3">
+          <div className="flex  sm:gap-3">
             {timeFrames.map((frame) => (
               <button
                 key={frame}
                 onClick={() => setTimeFrame(frame)}
-                className={`px-2 py-4 sm:py-2.5 text-xs transition-colors ${
+                className={`px-1 py-4 sm:py-2.5 text-xs transition-colors ${
                   timeFrame === frame
                     ? "text-[#009688] border-t-2 border-[#009688]"
                     : "text-[#A3A3A3] hover:text-gray-300"
@@ -178,7 +178,7 @@ const RetailPriceChart = () => {
           </div>
           <div className="flex items-center gap-1">
             <Select>
-              <SelectTrigger className="w-[100px] h-8 bg-transparent text-[#00897B] text-sm border-none">
+              <SelectTrigger className="w-[55px] sm:w-[100px] h-8 bg-transparent text-[#00897B] text-xs sm:text-sm border-none">
                 <SelectValue placeholder="Region" />
               </SelectTrigger>
               <SelectContent className="bg-[#404040]">
@@ -189,7 +189,7 @@ const RetailPriceChart = () => {
               </SelectContent>
             </Select>
             <Select>
-              <SelectTrigger className="w-[100px] h-8 bg-transparent text-[#00897B] text-sm border-none">
+              <SelectTrigger className="w-[55px] sm:w-[100px] h-8 bg-transparent text-[#00897B] text-xs sm:text-sm border-none">
                 <SelectValue placeholder="State" />
               </SelectTrigger>
               <SelectContent className="bg-[#404040]">
