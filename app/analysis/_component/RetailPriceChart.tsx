@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
 import { Share } from "lucide-react";
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+  SelectValue,
+} from "@/components/ui/select";
+import SummaryModal from "./SummaryModal";
 
 const chartData = {
   PMS: {
@@ -95,6 +99,7 @@ type TimeFrame = keyof (typeof chartData)["PMS"];
 const RetailPriceChart = () => {
   const [selectedProduct, setSelectedProduct] = useState<ProductType>("PMS");
   const [timeFrame, setTimeFrame] = useState<TimeFrame>("1D");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const currentData = chartData[selectedProduct][timeFrame];
   const timeFrames: TimeFrame[] = ["1D", "1W", "1M", "3M", "6M", "YTD", "All"];
@@ -147,11 +152,15 @@ const RetailPriceChart = () => {
           </ResponsiveContainer>
         </div>
         <div className="flex justify-end px-6 py-2">
-          <span className="text-[#00897B] text-sm font-medium cursor-pointer hover:text-green-300">
+          <span
+            onClick={() => setIsModalOpen(true)}
+            className="text-[#00897B] text-sm font-medium cursor-pointer hover:text-green-300"
+          >
             View detailed summary
           </span>
+          <SummaryModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>
-        <div className="flex justify-between items-center px-4  border-t border-[#464646]">
+        <div className="flex justify-between items-center px-4 border-t border-[#464646]">
           <div className="flex gap-1 sm:gap-3">
             {timeFrames.map((frame) => (
               <button
@@ -167,13 +176,29 @@ const RetailPriceChart = () => {
               </button>
             ))}
           </div>
-          <div className="flex  items-center gap-1 sm:gap-4  py-2">
-            <select className="bg-transparent text-[#A3A3A3] text-xs border-none outline-none cursor-pointer">
-              <option>Region</option>
-            </select>
-            <select className="bg-transparent text-[#A3A3A3] text-xs border-none outline-none cursor-pointer">
-              <option>State</option>
-            </select>
+          <div className="flex items-center gap-1">
+            <Select>
+              <SelectTrigger className="w-[100px] h-8 bg-transparent text-[#00897B] text-sm border-none">
+                <SelectValue placeholder="Region" />
+              </SelectTrigger>
+              <SelectContent className="bg-[#404040]">
+                <SelectItem value="north">North</SelectItem>
+                <SelectItem value="south">South</SelectItem>
+                <SelectItem value="east">East</SelectItem>
+                <SelectItem value="west">West</SelectItem>
+              </SelectContent>
+            </Select>
+            <Select>
+              <SelectTrigger className="w-[100px] h-8 bg-transparent text-[#00897B] text-sm border-none">
+                <SelectValue placeholder="State" />
+              </SelectTrigger>
+              <SelectContent className="bg-[#404040]">
+                <SelectItem value="lagos">Lagos</SelectItem>
+                <SelectItem value="abuja">Abuja</SelectItem>
+                <SelectItem value="kano">Kano</SelectItem>
+                <SelectItem value="rivers">Rivers</SelectItem>
+              </SelectContent>
+            </Select>
             <span className="text-[#12B76A] text-xs">
               •<span className="text-[#A3A3A3]"> Price</span>
             </span>
