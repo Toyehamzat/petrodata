@@ -13,6 +13,8 @@ pnpm dev
 # or
 bun dev
 ```
+
+Codebase tree:
 ```bash
 .next/
 app/
