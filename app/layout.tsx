@@ -6,7 +6,6 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar/AppSidebar";
 import { cookies } from "next/headers";
 import Header from "@/components/header/header";
-import { MantineProvider } from "@mantine/core";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +34,6 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-[calc(100vh-1px)] overflow-y-scroll`}
       >
-        <MantineProvider>
           <ThemeProvider
             attribute="class"
             enableSystem
@@ -51,7 +49,6 @@ export default async function RootLayout({
               </main>
             </SidebarProvider>
           </ThemeProvider>
-        </MantineProvider>
       </body>
     </html>
   );
