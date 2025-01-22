@@ -13,6 +13,74 @@ pnpm dev
 # or
 bun dev
 ```
+```bash
+.next/
+app/
+  ├── analysis/
+  ├── api/
+  ├── globals.css
+  ├── icon.svg
+  ├── layout.tsx
+  ├── not-found.tsx
+  ├── page.tsx
+components/
+  ├── header/
+  ├── sidebar/
+  ├── toggle/
+  ├── ui/
+data/
+  ├── testData.json
+  ├── week.ts
+hooks/
+  ├── use-mobile.tsx
+lib/
+  ├── utils.ts
+provider/
+  ├── theme-provider.tsx
+public/
+  ├── file.svg
+  ├── globe.svg
+  ├── next.svg
+  ├── vercel.svg
+  ├── window.svg
+.gitignore
+components.json
+eslint.config.mjs
+middleware.ts
+next-env.d.ts
+next.config.ts
+package-lock.json
+package.json
+postcss.config.mjs
+```
+External Libraries
+
+This project uses the following external libraries:
+
+    @radix-ui/react-dialog: ^1.1.4 - For dialog components.
+    @radix-ui/react-select: ^2.1.4 - For select dropdowns.
+    @radix-ui/react-separator: ^1.1.1 - For creating separators.
+    @radix-ui/react-slot: ^1.1.1 - For component slots.
+    @radix-ui/react-switch: ^1.1.2 - For switch components.
+    @radix-ui/react-tabs: ^1.1.2 - For tabbed interfaces.
+    @radix-ui/react-tooltip: ^1.1.6 - For tooltips.
+    chart.js: ^4.4.7 - For charting solutions.
+    class-variance-authority: ^0.7.1 - For handling className variance.
+    clsx: ^2.1.1 - Utility for conditional classNames.
+    lucide-react: ^0.473.0 - React icons library.
+    next: 15.1.5 - Next.js framework.
+    next-themes: ^0.4.4 - Theme management for Next.js.
+    react: ^19.0.0 - React library.
+    react-chartjs-2: ^5.3.0 - React wrapper for Chart.js.
+    react-dom: ^19.0.0 - React DOM library.
+    recharts: ^2.15.0 - For building charts and visualizations.
+    tailwind-merge: ^2.6.0 - Tailwind utility for merging classes.
+    tailwindcss-animate: ^1.0.7 - Animations for Tailwind CSS.
+
+To install this dependenciec:
+```bash
+npm install
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
